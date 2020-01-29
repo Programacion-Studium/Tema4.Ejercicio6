@@ -13,16 +13,16 @@ public class Ejercicio6 extends Frame implements WindowListener, ItemListener
 	private static final long serialVersionUID = 1L;
 	// Creación de una lista con 4 elementos visibles y que no
 	// permite multiselección
-	List choLista = new List(6, false); //Esto indica la cantidad de elementos que seran visibles, el false indica si podemos o no marcar mas de un elemento de la lista.
+	List choLista = new List(4, false); //Esto indica la cantidad de elementos que seran visibles, el false indica si podemos o no marcar mas de un elemento de la lista.
 	public Ejercicio6()
 	{
 		setLayout(new FlowLayout());
 		setTitle("Lista"); //Titulo de la ventana
 		//Añadimos los elementos de la lista
-		choLista.add("Real Betis");
-		choLista.add("Sevilla FC");
-		choLista.add("Real Madrid");
-		choLista.add("Barcelona FC");
+		choLista.add("Baloncesto Fuenlabrada");
+		choLista.add("Vilbao Basket");
+		choLista.add("Cajasol");
+		choLista.add("Valencia Basket Club");
 		add(choLista); //Añadimos la lista
 		setLocationRelativeTo(null);
 		setSize(150,150);
@@ -39,17 +39,17 @@ public class Ejercicio6 extends Frame implements WindowListener, ItemListener
 	public void itemStateChanged(ItemEvent ie) {
 		// TODO Auto-generated method stub
 		String ciudad= new String();
-		if ("Real Betis".equals(ie.getItem())) {
+		if ("Baloncesto Fuenlabrada".equals(choLista.getSelectedItem())) {
+			ciudad = "Fuenlabrada";
+		}
+		if ("Vilbao Basket".equals(choLista.getSelectedItem())) {
+			ciudad = "Zaragoza";
+		}
+		if ("Cajasol".equals(choLista.getSelectedItem())) {
 			ciudad = "Sevilla";
 		}
-		if ("Sevilla FC".equals(ie.getItem())) {
-			ciudad = "Sevilla";
-		}
-		if ("Real Madrid".equals(ie.getItem())) {
-			ciudad = "Madrid";
-		}
-		if ("Barcelona FC".equals(ie.getItem())) {
-			ciudad = "Barcelona";
+		if ("Valencia Basket Club".equals(choLista.getSelectedItem())) {
+			ciudad = "Valencia";
 		}
 		System.out.println(ciudad);	
 	}
